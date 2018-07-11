@@ -1,0 +1,1 @@
+float INF = Float.POSITIVE_INFINITY;
