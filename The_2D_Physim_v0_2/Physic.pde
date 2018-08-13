@@ -1,4 +1,4 @@
-void plane_triangle_impulse(plane  body1, triangle body2) {
+void plane_triangle_impulse(plane  body1, Triangle body2) {
 
   boolean collision = false;
   PVector r_contact = new PVector(0, 0, 0);
@@ -33,9 +33,9 @@ void plane_triangle_impulse(plane  body1, triangle body2) {
   PVector n = body1.dir;
   float COF = max(body1.COF, body2.COF);
   stroke(255, 0, 0);
-  line_point( body2.lin_pos, PVector.add( body2.lin_pos, r_contact));
+  line_vec( body2.lin_pos, PVector.add( body2.lin_pos, r_contact));
   stroke(0, 255, 0);
-  line_point( PVector.add( body2.lin_pos, r_contact).add(PVector.mult(n, 50)), PVector.add( body2.lin_pos, r_contact));
+  line_vec( PVector.add( body2.lin_pos, r_contact).add(PVector.mult(n, 50)), PVector.add( body2.lin_pos, r_contact));
   float Jr = impulse_cal(Vr,m1,m2,I1,I2,r1,r2,n,COF);
   body2.lin_vel.add(PVector.mult(n,Jr/m2));
   body2.ang_vel.add(PVector.mult(r2.cross(n),Jr/I2));

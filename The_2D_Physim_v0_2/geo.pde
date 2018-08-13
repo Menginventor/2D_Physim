@@ -15,7 +15,7 @@ PVector planeIntersection (plane A, plane B) {
   return new PVector(VAR.ele[0][0],VAR.ele[1][0]);
 }
 
-void line_point(PVector A,PVector B){
+void line_vec(PVector A,PVector B){
   line(A.x,A.y,B.x,B.y);
 }
 

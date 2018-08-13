@@ -111,7 +111,9 @@ mat RZ(float theta) {
     });
     return R;
 }
-
+PVector rotateVec(PVector vec,float angle){
+  return mat_mult(RZ(angle),V2M(vec)).toVector();
+}
 mat V2M(PVector v){
   mat m = new mat(3, 1);
   m.set_ele(new float[][]{
